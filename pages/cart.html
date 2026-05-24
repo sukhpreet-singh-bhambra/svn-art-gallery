@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVN Art Gallery - Cart</title>
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/site-header.css" />
+  </head>
+  <body>
+    <header>
+      <h2><a href="../index.html">SVN Art Gallery</a></h2>
+      <nav aria-label="Main navigation">
+        <ul class="navLinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="exhibition.html">Exhibition</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="cartHero">
+      <div>
+        <p class="cartEyebrow">Order summary</p>
+        <h1>Shopping Cart</h1>
+        <p>Review your selected artwork, adjust quantities, and complete checkout.</p>
+      </div>
+    </section>
+
+    <main class="cartPage">
+      <section class="cartPanel" aria-labelledby="cartPanelTitle">
+        <div class="cartPanelHeader">
+          <div>
+            <p class="cartEyebrow">Selected artwork</p>
+            <h2 id="cartPanelTitle">Your Cart</h2>
+          </div>
+          <strong id="cartPanelCount">0 items</strong>
+        </div>
+
+        <div id="cartItems" class="cartItems"></div>
+        <a class="continueShoppingLink" href="products.html">Continue Shopping</a>
+      </section>
+
+      <section class="checkoutPanel" aria-labelledby="checkoutTitle">
+        <form id="checkoutForm" class="checkoutForm" novalidate>
+          <h2 id="checkoutTitle">Checkout</h2>
+          <p class="checkoutHelp">
+            Complete each section to place a demo order. Payment details are
+            validated in this browser only.
+          </p>
+
+          <fieldset class="checkoutSection">
+            <legend>Contact Details</legend>
+            <div class="checkoutGrid">
+              <div class="formField">
+                <label for="checkoutName">Full Name</label>
+                <input id="checkoutName" type="text" autocomplete="name" maxlength="80" aria-describedby="checkoutNameError" />
+                <span id="checkoutNameError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="checkoutEmail">Email</label>
+                <input id="checkoutEmail" type="email" autocomplete="email" maxlength="80" aria-describedby="checkoutEmailError" />
+                <span id="checkoutEmailError" class="fieldError"></span>
+              </div>
+              <div class="formField checkoutFull">
+                <label for="checkoutPhone">Phone</label>
+                <input id="checkoutPhone" type="tel" autocomplete="tel" maxlength="20" placeholder="10-digit phone number" aria-describedby="checkoutPhoneError" />
+                <span id="checkoutPhoneError" class="fieldError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="checkoutSection">
+            <legend>Delivery Address</legend>
+            <div class="checkoutGrid">
+              <div class="formField checkoutFull">
+                <label for="checkoutAddress">Street Address</label>
+                <input id="checkoutAddress" type="text" autocomplete="street-address" maxlength="120" aria-describedby="checkoutAddressError" />
+                <span id="checkoutAddressError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="checkoutCity">City</label>
+                <input id="checkoutCity" type="text" autocomplete="address-level2" maxlength="60" aria-describedby="checkoutCityError" />
+                <span id="checkoutCityError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="checkoutProvince">Province/State</label>
+                <select id="checkoutProvince" autocomplete="address-level1" aria-describedby="checkoutProvinceError">
+                  <option value="">Select</option>
+                  <option value="ON">Ontario</option>
+                  <option value="BC">British Columbia</option>
+                  <option value="AB">Alberta</option>
+                  <option value="QC">Quebec</option>
+                  <option value="MB">Manitoba</option>
+                  <option value="SK">Saskatchewan</option>
+                  <option value="NS">Nova Scotia</option>
+                  <option value="NB">New Brunswick</option>
+                  <option value="NL">Newfoundland and Labrador</option>
+                  <option value="PE">Prince Edward Island</option>
+                  <option value="NT">Northwest Territories</option>
+                  <option value="NU">Nunavut</option>
+                  <option value="YT">Yukon</option>
+                  <option value="US">United States</option>
+                </select>
+                <span id="checkoutProvinceError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="checkoutPostal">Postal/ZIP Code</label>
+                <input id="checkoutPostal" type="text" autocomplete="postal-code" maxlength="10" placeholder="A1A 1A1" aria-describedby="checkoutPostalError" />
+                <span id="checkoutPostalError" class="fieldError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="checkoutSection">
+            <legend>Payment Details</legend>
+            <p class="paymentNote">Use test card details only. This page does not process real payments.</p>
+            <div class="checkoutGrid">
+              <div class="formField checkoutFull">
+                <label for="cardName">Name on Card</label>
+                <input id="cardName" type="text" autocomplete="cc-name" maxlength="80" aria-describedby="cardNameError" />
+                <span id="cardNameError" class="fieldError"></span>
+              </div>
+              <div class="formField checkoutFull">
+                <label for="cardNumber">Card Number</label>
+                <input id="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="23" placeholder="4242 4242 4242 4242" aria-describedby="cardNumberError" />
+                <span id="cardNumberError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="cardExpiry">Expiry Date</label>
+                <input id="cardExpiry" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/YY" aria-describedby="cardExpiryError" />
+                <span id="cardExpiryError" class="fieldError"></span>
+              </div>
+              <div class="formField">
+                <label for="cardCvv">CVV</label>
+                <input id="cardCvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123" aria-describedby="cardCvvError" />
+                <span id="cardCvvError" class="fieldError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="orderTotals" aria-label="Order totals">
+            <div>
+              <span>Subtotal</span>
+              <strong id="cartSubtotal">$0.00</strong>
+            </div>
+            <div>
+              <span>Shipping</span>
+              <strong id="cartShipping">$0.00</strong>
+            </div>
+            <div>
+              <span>Estimated Tax</span>
+              <strong id="cartTax">$0.00</strong>
+            </div>
+            <div class="cartTotalRow">
+              <span>Total</span>
+              <strong id="cartTotal">$0.00</strong>
+            </div>
+          </div>
+
+          <div class="formField termsField">
+            <label for="checkoutTerms">
+              <input id="checkoutTerms" type="checkbox" aria-describedby="checkoutTermsError" />
+              I confirm that my order and payment details are correct.
+            </label>
+            <span id="checkoutTermsError" class="fieldError"></span>
+          </div>
+
+          <button id="checkoutButton" type="submit">Place Order</button>
+          <p id="checkoutMessage" class="checkoutMessage" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <div id="orderPopup" class="orderPopup" hidden>
+      <div class="orderPopupPanel" role="dialog" aria-modal="true" aria-labelledby="orderPopupTitle">
+        <p class="cartEyebrow">Order confirmed</p>
+        <h2 id="orderPopupTitle">Thank You For Your Order</h2>
+        <p id="orderPopupMessage"></p>
+        <p id="orderRedirectMessage" class="orderRedirectMessage">
+          You will be redirected to Products in 5 secs.
+        </p>
+        <button id="orderPopupButton" type="button">Continue Shopping Now</button>
+      </div>
+    </div>
+
+    <footer class="siteFooter" aria-label="Site footer">
+      <div class="siteFooterInner">
+        <div class="footerBrand">
+          <h2><a href="../index.html">SVN Art Gallery</a></h2>
+          <p>
+            Curated contemporary artwork, exhibition programming, and gallery
+            services for homes, offices, collectors, and creative communities.
+          </p>
+        </div>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <h3>Explore</h3>
+          <a href="../index.html">Home</a>
+          <a href="exhibition.html">Exhibition</a>
+          <a href="products.html">Products</a>
+          <a href="aboutUs.html">About Us</a>
+          <a href="contactUs.html">Contact Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+        <div class="footerContact">
+          <h3>Gallery</h3>
+          <div class="footerMap">
+            <iframe
+              title="Map to SVN Art Gallery"
+              src="https://www.google.com/maps?q=Conestoga%20College%20Kitchener%20Ontario&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <p>Original art, workshops, private curation, and art leasing.</p>
+        </div>
+      </div>
+      <div class="footerMeta">
+        <p>
+          &copy; <span id="displayCurrentYear"></span> SVN Art Gallery. All rights
+          reserved.
+        </p>
+        <p><strong>Page Created by Sukhpreet Singh Bhambra</strong></p>
+        <p>
+          This is a group project created by
+          <strong>
+            Victor Ferreira Araujo, Sukhpreet Singh Bhambra, and Nirali Patel
+          </strong>
+          in Semester 1 of the Web Development program at Conestoga College.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/site.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
+</html>

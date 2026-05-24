@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVN Art Gallery - Art Collection</title>
+    <link rel="stylesheet" href="../css/products.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/site-header.css" />
+  </head>
+  <body>
+    <header>
+      <h2><a href="../index.html">SVN Art Gallery</a></h2>
+      <nav aria-label="Main navigation">
+        <ul class="navLinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="exhibition.html">Exhibition</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="productsHero">
+      <h1>Curated Art Collection</h1>
+      <p>
+        Browse original works and themed collections selected for homes,
+        offices, and private gallery spaces.
+      </p>
+    </section>
+
+    <main role="main">
+      <ul id="imageListOne">
+        <li><a href="../images/AnimeGirlImage1.jpg"></a></li>
+        <li><a href="../images/AnimeGirlImage2.jpg"></a></li>
+        <li><a href="../images/AnimeGirlImage3.jpg"></a></li>
+        <li><a href="../images/AnimeGirlImage4.jpg"></a></li>
+        <li><a href="../images/AnimeGirlImage5.jpg"></a></li>
+        <li><a href="../images/AnimeGirlImage6.jpg"></a></li>
+      </ul>
+      <ul id="imageListTwo">
+        <li><a href="../images/Cat.jpg"></a></li>
+        <li><a href="../images/Dog.jpg"></a></li>
+        <li><a href="../images/Elephant.jpg"></a></li>
+        <li><a href="../images/Lion.jpg"></a></li>
+        <li><a href="../images/Tiger.jpg"></a></li>
+        <li><a href="../images/Rhino.jpg"></a></li>
+      </ul>
+      <ul id="imageListThree">
+        <li><a href="../images/Ferrari.jpg"></a></li>
+        <li><a href="../images/Porche.jpg"></a></li>
+        <li><a href="../images/Mercedes.jpg"></a></li>
+        <li><a href="../images/Cayane.jpg"></a></li>
+        <li><a href="../images/Vintage.jpg"></a></li>
+        <li><a href="../images/FerrariCoupe.jpg"></a></li>
+      </ul>
+      <ul id="imageListFour">
+        <li><a href="../images/Owl.jpg"></a></li>
+        <li><a href="../images/woodpecker.jpg"></a></li>
+        <li><a href="../images/crow.jpg"></a></li>
+        <li><a href="../images/duck.jpg"></a></li>
+        <li><a href="../images/eagle.jpg"></a></li>
+        <li><a href="../images/parrot.jpg"></a></li>
+      </ul>
+      <ul id="imageListFive">
+        <li><a href="../images/apple.jpg"></a></li>
+        <li><a href="../images/banana.jpg"></a></li>
+        <li><a href="../images/blueberry.jpg"></a></li>
+        <li><a href="../images/strawberry.jpg"></a></li>
+        <li><a href="../images/watermelon.jpg"></a></li>
+        <li><a href="../images/pineapple.jpg"></a></li>
+      </ul>
+      <ul id="imageListSix">
+        <li><a href="../images/Modern_Art_1.jpg"></a></li>
+        <li><a href="../images/Modern_Art_2.jpg"></a></li>
+        <li><a href="../images/Modern_Art_3.jpg"></a></li>
+        <li><a href="../images/Modern_Art_4.jpg"></a></li>
+        <li><a href="../images/Modern_Art_5.jpg"></a></li>
+        <li><a href="../images/Modern_Art_6.jpg"></a></li>
+      </ul>
+
+      <div id="artTabs">
+        <ul>
+          <li class="artWorkTab">
+            <a id="artWorkTabLinkIP" class="artWorkTabLink" href="#oneIndividualArtWorkGrid">
+              Individual Paintings
+            </a>
+          </li>
+          <li class="artWorkTab">
+            <a class="artWorkTabLink" href="#twoCollectionArtWorkGrid">
+              Collection Sets
+            </a>
+          </li>
+        </ul>
+
+        <section id="oneIndividualArtWorkGrid" aria-label="Individual paintings">
+          <article class="artGridCell">
+            <a href="../original_sized_image/MountainFeaturingTwoDistinctRings.jpg" data-lightbox="individual" data-title="Mountain Featuring Two Distinct Rings">
+              <figure>
+                <img src="../images/MountainFeaturingTwoDistinctRings.jpg" alt="Mountain featuring two distinct rings" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Mountain with Rings</h3>
+              <p class="artInformation">
+                A surreal mountain landscape with luminous circular forms,
+                ideal for calm, architectural interiors.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$299</span>
+                <span class="artReview">★★★★☆</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct1" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct1" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/WomanOnAWhiteHorseUnderAFullMoon.jpg" data-lightbox="individual" data-title="Woman On A White Horse Under A Full Moon">
+              <figure>
+                <img src="../images/WomanOnAWhiteHorseUnderAFullMoon.jpg" alt="Woman on a white horse under a full moon" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Woman On Horse</h3>
+              <p class="artInformation">
+                A moonlit figurative piece with cinematic contrast, soft
+                movement, and a romantic focal point.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$800</span>
+                <span class="artReview">★★★★★</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct2" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct2" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/ASkullSurroundedByFlames.jpg" data-lightbox="individual" data-title="A Skull Surrounded By Flames">
+              <figure>
+                <img src="../images/ASkullSurroundedByFlames.jpg" alt="A skull surrounded by flames" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Skull With Flames</h3>
+              <p class="artInformation">
+                A bold, high-contrast work created for spaces that can carry a
+                dramatic statement.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$700</span>
+                <span class="artReview">★★★★★</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct3" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct3" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/MajesticMountains.jpg" data-lightbox="individual" data-title="Majestic Mountains">
+              <figure>
+                <img src="../images/MajesticMountains.jpg" alt="Majestic mountain landscape" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Majestic Mountains</h3>
+              <p class="artInformation">
+                A refined landscape study with atmospheric depth, layered
+                peaks, and a peaceful sense of scale.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$499</span>
+                <span class="artReview">★★★★☆</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct4" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct4" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/ColorfulPaintingOfFlowers.jpg" data-lightbox="individual" data-title="Colorful Painting Of Flowers">
+              <figure>
+                <img src="../images/ColorfulPaintingOfFlowers.jpg" alt="Colorful painting of flowers" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Flower Painting</h3>
+              <p class="artInformation">
+                A vibrant floral composition that brings warmth, color, and an
+                inviting focal point to a room.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$900</span>
+                <span class="artReview">★★★★★</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct5" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct5" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/TreeWithNoLeafInAutumn.jpg" data-lightbox="individual" data-title="Tree With No Leaf In Autumn">
+              <figure>
+                <img src="../images/TreeWithNoLeafInAutumn.jpg" alt="Autumn tree without leaves" />
+              </figure>
+            </a>
+            <div class="artDetails">
+              <h3 class="artHeading">Autumn Tree</h3>
+              <p class="artInformation">
+                A quiet seasonal work built around texture, negative space, and
+                the reflective mood of late autumn.
+              </p>
+              <div class="artPriceAndRating">
+                <span class="artPrice">$999</span>
+                <span class="artReview">★★★★☆</span>
+              </div>
+              <div class="artQuantityDiv">
+                <label for="quantityProduct6" class="artLabelQuantity">Quantity</label>
+                <input id="quantityProduct6" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" />
+              </div>
+              <div class="artDivAddToCartButton">
+                <button class="artAddToCartButton" type="button">Add To Cart</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="twoCollectionArtWorkGrid" aria-label="Artwork collections">
+          <article class="artGridCell">
+            <a href="../original_sized_image/AnimeGirlImage1.jpg" data-lightbox="collection-anime" data-title="Anime Collection">
+              <figure>
+                <img id="artCollectionImageOne" src="../images/AnimeGirlImage1.jpg" alt="Anime collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/AnimeGirlImage2.jpg" data-lightbox="collection-anime" data-title="Anime Study 2"></a>
+            <a href="../original_sized_image/AnimeGirlImage3.jpg" data-lightbox="collection-anime" data-title="Anime Study 3"></a>
+            <a href="../original_sized_image/AnimeGirlImage4.jpg" data-lightbox="collection-anime" data-title="Anime Study 4"></a>
+            <a href="../original_sized_image/AnimeGirlImage5.jpg" data-lightbox="collection-anime" data-title="Anime Study 5"></a>
+            <a href="../original_sized_image/AnimeGirlImage6.jpg" data-lightbox="collection-anime" data-title="Anime Study 6"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Anime</h3>
+              <p class="artInformation">
+                Expressive character artworks with polished color, stylized
+                portraiture, and strong visual energy.
+              </p>
+              <div class="artPriceAndRating"><span class="artPrice">$919</span><span class="artReview">★★★★☆</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct7" class="artLabelQuantity">Quantity</label><input id="quantityProduct7" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/Cat.jpg" data-lightbox="collection-animals" data-title="Animals Collection">
+              <figure>
+                <img id="artCollectionImageTwo" src="../images/Cat.jpg" alt="Animals collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/Dog.jpg" data-lightbox="collection-animals" data-title="Dog"></a>
+            <a href="../original_sized_image/Elephant.jpg" data-lightbox="collection-animals" data-title="Elephant"></a>
+            <a href="../original_sized_image/Lion.jpg" data-lightbox="collection-animals" data-title="Lion"></a>
+            <a href="../original_sized_image/Tiger.jpg" data-lightbox="collection-animals" data-title="Tiger"></a>
+            <a href="../original_sized_image/Rhino.jpg" data-lightbox="collection-animals" data-title="Rhino"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Animals</h3>
+              <p class="artInformation">Wildlife portraits that balance realism, personality, and decorative impact.</p>
+              <div class="artPriceAndRating"><span class="artPrice">$725</span><span class="artReview">★★★★★</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct8" class="artLabelQuantity">Quantity</label><input id="quantityProduct8" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/Ferrari.jpg" data-lightbox="collection-cars" data-title="Cars Collection">
+              <figure>
+                <img id="artCollectionImageThree" src="../images/Ferrari.jpg" alt="Cars collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/Porche.jpg" data-lightbox="collection-cars" data-title="Sports Car"></a>
+            <a href="../original_sized_image/Mercedes.jpg" data-lightbox="collection-cars" data-title="Mercedes"></a>
+            <a href="../original_sized_image/Cayane.jpg" data-lightbox="collection-cars" data-title="Cayane"></a>
+            <a href="../original_sized_image/FerrariCoupe.jpg" data-lightbox="collection-cars" data-title="Ferrari Coupe"></a>
+            <a href="../original_sized_image/Vintage.jpg" data-lightbox="collection-cars" data-title="Vintage Car"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Cars</h3>
+              <p class="artInformation">A dynamic automotive collection featuring performance, polish, and gallery-ready presentation.</p>
+              <div class="artPriceAndRating"><span class="artPrice">$587</span><span class="artReview">★★★★★</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct9" class="artLabelQuantity">Quantity</label><input id="quantityProduct9" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/Owl.jpg" data-lightbox="collection-birds" data-title="Birds Collection">
+              <figure>
+                <img id="artCollectionImageFour" src="../images/Owl.jpg" alt="Birds collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/sparrow.jpg" data-lightbox="collection-birds" data-title="Sparrow"></a>
+            <a href="../original_sized_image/parrot.jpg" data-lightbox="collection-birds" data-title="Parrot"></a>
+            <a href="../original_sized_image/eagle.jpg" data-lightbox="collection-birds" data-title="Eagle"></a>
+            <a href="../original_sized_image/woodpecker.jpg" data-lightbox="collection-birds" data-title="Woodpecker"></a>
+            <a href="../original_sized_image/crow.jpg" data-lightbox="collection-birds" data-title="Crow"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Birds</h3>
+              <p class="artInformation">Bird studies with varied color, movement, and natural detail.</p>
+              <div class="artPriceAndRating"><span class="artPrice">$499</span><span class="artReview">★★★★☆</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct10" class="artLabelQuantity">Quantity</label><input id="quantityProduct10" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/apple.jpg" data-lightbox="collection-fruits" data-title="Fruits Collection">
+              <figure>
+                <img id="artCollectionImageFive" src="../images/apple.jpg" alt="Fruits collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/banana.jpg" data-lightbox="collection-fruits" data-title="Banana"></a>
+            <a href="../original_sized_image/blueberry.jpg" data-lightbox="collection-fruits" data-title="Blueberry"></a>
+            <a href="../original_sized_image/watermelon.jpg" data-lightbox="collection-fruits" data-title="Watermelon"></a>
+            <a href="../original_sized_image/pineapple.jpg" data-lightbox="collection-fruits" data-title="Pineapple"></a>
+            <a href="../original_sized_image/strawberry.jpg" data-lightbox="collection-fruits" data-title="Strawberry"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Fruits</h3>
+              <p class="artInformation">A playful still-life collection with saturated color and clean modern presentation.</p>
+              <div class="artPriceAndRating"><span class="artPrice">$691</span><span class="artReview">★★★★★</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct11" class="artLabelQuantity">Quantity</label><input id="quantityProduct11" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+
+          <article class="artGridCell">
+            <a href="../original_sized_image/Modern_Art_1.jpg" data-lightbox="collection-modern" data-title="Modern Art Collection">
+              <figure>
+                <img id="artCollectionImageSix" src="../images/Modern_Art_1.jpg" alt="Modern art collection preview" />
+              </figure>
+            </a>
+            <a href="../original_sized_image/Modern_Art_2.jpg" data-lightbox="collection-modern" data-title="Modern Art 2"></a>
+            <a href="../original_sized_image/Modern_Art_3.jpg" data-lightbox="collection-modern" data-title="Modern Art 3"></a>
+            <a href="../original_sized_image/Modern_Art_4.jpg" data-lightbox="collection-modern" data-title="Modern Art 4"></a>
+            <a href="../original_sized_image/Modern_Art_5.jpg" data-lightbox="collection-modern" data-title="Modern Art 5"></a>
+            <a href="../original_sized_image/Modern_Art_6.jpg" data-lightbox="collection-modern" data-title="Modern Art 6"></a>
+            <div class="artDetails">
+              <h3 class="artHeading">Modern Art</h3>
+              <p class="artInformation">A contemporary abstract collection with bold shapes, layered color, and flexible styling.</p>
+              <div class="artPriceAndRating"><span class="artPrice">$469</span><span class="artReview">★★★★☆</span></div>
+              <div class="artQuantityDiv"><label for="quantityProduct12" class="artLabelQuantity">Quantity</label><input id="quantityProduct12" type="number" value="0" min="0" max="10" class="artQuantity artSelectQuantity" /></div>
+              <div class="artDivAddToCartButton"><button class="artAddToCartButton" type="button">Add To Cart</button></div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="siteFooter" aria-label="Site footer">
+      <div class="siteFooterInner">
+        <div class="footerBrand">
+          <h2><a href="../index.html">SVN Art Gallery</a></h2>
+          <p>
+            Curated contemporary artwork, exhibition programming, and gallery
+            services for homes, offices, collectors, and creative communities.
+          </p>
+        </div>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <h3>Explore</h3>
+          <a href="../index.html">Home</a>
+          <a href="exhibition.html">Exhibition</a>
+          <a href="products.html">Products</a>
+          <a href="aboutUs.html">About Us</a>
+          <a href="contactUs.html">Contact Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+        <div class="footerContact">
+          <h3>Gallery</h3>
+          <div class="footerMap">
+            <iframe
+              title="Map to SVN Art Gallery"
+              src="https://www.google.com/maps?q=Conestoga%20College%20Kitchener%20Ontario&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <p>Original art, workshops, private curation, and art leasing.</p>
+        </div>
+      </div>
+      <div class="footerMeta">
+        <p>
+          &copy; <span id="displayCurrentYear"></span> SVN Art Gallery. All rights
+          reserved.
+        </p>
+        <p><strong>Page Created by Sukhpreet Singh Bhambra</strong></p>
+        <p>
+          This is a group project created by
+          <strong>
+            Victor Ferreira Araujo, Sukhpreet Singh Bhambra, and Nirali Patel
+          </strong>
+          in Semester 1 of the Web Development program at Conestoga College.
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/products.js"></script>
+  </body>
+</html>

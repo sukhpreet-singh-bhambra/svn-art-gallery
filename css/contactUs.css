@@ -1,0 +1,359 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #111827;
+  --muted: #5f6b7a;
+  --paper: #ffffff;
+  --soft: #f6f8fb;
+  --accent: #9a5b36;
+  --accent-soft: #f7eee7;
+  --line: #d9e0e8;
+  --nav: #111111;
+  --shadow: 0 18px 46px rgba(17, 24, 39, 0.12);
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: var(--soft);
+  color: var(--ink);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.contactHero {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  padding: 86px clamp(24px, 8vw, 120px);
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.24) 58%, rgba(0, 0, 0, 0.08)),
+    url("../images/homeServices.jpg") center/cover no-repeat;
+}
+
+.contactHeroContent {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.contactHero .eyebrow {
+  color: #f0b37e;
+}
+
+.contactHero h1,
+.contactIntro h2,
+.contactFeature h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.contactHero h1 {
+  max-width: 780px;
+  font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.contactHero p:last-child {
+  max-width: 590px;
+  margin-top: 18px;
+  color: #f8fafc;
+  font-size: 1.12rem;
+}
+
+.contactPage {
+  width: min(1240px, calc(100% - 40px));
+  margin: 64px auto 0;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.86fr) minmax(560px, 1.14fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.contactFeature,
+#contactUsContainer {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.contactFeature {
+  position: sticky;
+  top: 98px;
+}
+
+.contactFeature img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
+}
+
+.contactFeatureContent {
+  padding: 30px;
+}
+
+.contactFeature h2,
+.contactIntro h2 {
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.contactFeature p,
+.contactIntro p {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.contactDetails {
+  margin-top: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+.contactDetails div {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.contactDetails span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contactDetails strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+#contactUsContainer {
+  padding: clamp(26px, 4vw, 44px);
+  position: relative;
+  overflow: hidden;
+}
+
+#contactUsContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent), #f0b37e);
+}
+
+.contactIntro {
+  margin-bottom: 30px;
+}
+
+#contactUsForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border: 0;
+}
+
+.formFull,
+.buttonRow,
+.successMessage {
+  grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: var(--ink);
+  background: #fbfcfe;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 138px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(154, 91, 54, 0.12);
+  outline: none;
+}
+
+input.fieldInvalid,
+select.fieldInvalid,
+textarea.fieldInvalid,
+.radioInputs.fieldInvalid {
+  border-color: #b42318;
+  box-shadow: 0 0 0 4px rgba(180, 35, 24, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa5b1;
+}
+
+form label,
+legend {
+  color: var(--ink);
+  font-weight: 850;
+  font-size: 0.92rem;
+}
+
+.radioInputs {
+  min-height: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 12px 14px;
+  background: #fbfcfe;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.radioUnit {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+input[type="radio"] {
+  width: auto;
+  min-height: auto;
+  accent-color: var(--accent);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 10px;
+}
+
+button {
+  min-width: 112px;
+  background-color: var(--nav);
+  color: white;
+  font-weight: 850;
+  font-size: 0.96rem;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+#resetForm {
+  background: #f3f4f6;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+#resetForm:hover,
+#resetForm:focus {
+  background: #e5e7eb;
+}
+
+.errorMessage {
+  color: #b42318;
+  font-size: 0.88rem;
+  min-height: 1.1rem;
+}
+
+.successMessage {
+  display: none;
+  margin-top: 22px;
+  padding: 14px 16px;
+  color: #166534;
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+  font-weight: 800;
+  text-align: center;
+}
+
+footer {
+  margin-top: 72px;
+  padding: 24px;
+  color: #fff;
+  background-color: #0f1115;
+  border-top: 4px solid var(--accent);
+  text-align: center;
+}
+
+footer p {
+  color: #d7d7d7;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1000px) {
+  .contactPage {
+    grid-template-columns: 1fr;
+  }
+
+  .contactFeature {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .contactHero {
+    min-height: 360px;
+    padding: 70px 24px;
+  }
+
+  .contactPage {
+    width: min(100% - 28px, 1240px);
+    margin-top: 36px;
+  }
+
+  .formRow {
+    gap: 7px;
+  }
+
+  #contactUsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: min(100%, 220px);
+  }
+}

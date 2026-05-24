@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVN Art Gallery</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="css/site-header.css" />
+  </head>
+  <body>
+    <header>
+      <h2><a href="index.html">SVN Art Gallery</a></h2>
+      <nav aria-label="Main navigation">
+        <ul class="navLinks">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="pages/exhibition.html">Exhibition</a></li>
+          <li><a href="pages/products.html">Products</a></li>
+          <li><a href="pages/aboutUs.html">About Us</a></li>
+          <li><a href="pages/contactUs.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <p class="eyebrow">Contemporary gallery and curated collection</p>
+      <h1>Art That Speaks</h1>
+      <p>
+        Discover contemporary works, thoughtful artist stories, and immersive
+        exhibitions curated for collectors, students, and art lovers.
+      </p>
+      <div class="heroActions">
+        <a href="pages/exhibition.html">View Exhibition</a>
+        <a href="pages/products.html">Browse Artworks</a>
+      </div>
+    </section>
+
+    <main>
+      <section class="introSection" aria-label="Gallery overview">
+        <div>
+          <p class="eyebrow">SVN Art Gallery</p>
+          <h2>Curated art experiences shaped with clarity and care.</h2>
+        </div>
+        <div class="introCopy">
+          <p>
+            We bring together original artwork, exhibition programming, and
+            practical services for homes, offices, collectors, and creative
+            communities across Ontario.
+          </p>
+          <p>
+            Our gallery is designed for people who want art to feel thoughtful,
+            approachable, and personal. From discovering a first statement piece
+            to planning a complete collection, SVN Art Gallery helps visitors
+            explore work with clear guidance and a refined curatorial point of
+            view.
+          </p>
+          <p>
+            Alongside exhibitions, we support art leasing, private curation,
+            artist showcases, and educational workshops that connect people more
+            closely with contemporary visual culture.
+          </p>
+        </div>
+        <div class="impactStrip" aria-label="Gallery statistics">
+          <div>
+            <strong>40+</strong>
+            <span>Curated works</span>
+          </div>
+          <div>
+            <strong>25+</strong>
+            <span>Featured artists</span>
+          </div>
+          <div>
+            <strong>12</strong>
+            <span>Community programs</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="collectionPreview" aria-labelledby="collectionPreviewTitle">
+        <div class="sectionHeader">
+          <p class="eyebrow">Collection preview</p>
+          <h2 id="collectionPreviewTitle">A refined mix of contemporary work.</h2>
+        </div>
+        <div class="previewGrid">
+          <a href="pages/products.html">
+            <img src="images/modernArt.jpg" alt="Modern abstract artwork" />
+            <span>Modern Abstracts</span>
+          </a>
+          <a href="pages/products.html">
+            <img src="images/ColorfulPaintingOfFlowers.jpg" alt="Colorful flower painting" />
+            <span>Floral Studies</span>
+          </a>
+          <a href="pages/products.html">
+            <img src="images/abstractArt.jpg" alt="Atmospheric abstract artwork" />
+            <span>Immersive Color</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="artistsSection" aria-label="Featured artists">
+        <div class="artistSectionHeader">
+          <div class="sectionHeader">
+            <p class="eyebrow">Featured artists</p>
+            <h2>Artists With Distinct Voices</h2>
+          </div>
+          <div class="artistScrollControls" aria-label="Featured artist scroll controls">
+            <button class="artistScrollButton" type="button" data-direction="-1">
+              Previous
+            </button>
+            <button class="artistScrollButton" type="button" data-direction="1">
+              Next
+            </button>
+          </div>
+        </div>
+        <div class="artistScrollerShell">
+          <ul class="artistScroller" id="artistScroller">
+            <li>
+              <div class="artistCard">
+                <img src="images/elira-voss.png" alt="Portrait of artist Elira Voss" />
+                <h2>Elira Voss</h2>
+                <p>
+                  Elira Voss is a mixed-media artist based in Oslo, known for
+                  blending traditional oil techniques with digital overlays. Her
+                  work explores the intersection of memory and myth, drawing from
+                  Norse folklore and modern urban landscapes.
+                </p>
+                <p>
+                  Her featured works at SVN Art Gallery are selected for layered
+                  texture, quiet symbolism, and cinematic color that rewards
+                  slower viewing in both private and public spaces.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="artistCard">
+                <img src="images/mateo-rincon.png" alt="Portrait of artist Mateo Rincon" />
+                <h2>Mateo Rincon</h2>
+                <p>
+                  Born in Medellin, Colombia, Mateo Rincon's art bursts with
+                  color and movement. His style combines street art with
+                  neo-expressionist elements, often addressing social justice
+                  themes and Latin American identity.
+                </p>
+                <p>
+                  The gallery presents his work for collectors who want bold
+                  statement pieces with rhythm, optimism, and a strong connection
+                  to contemporary cultural storytelling.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="artistCard">
+                <img src="images/juniper-hale.png" alt="Portrait of artist Juniper Hale" />
+                <h2>Juniper "Juno" Hale</h2>
+                <p>
+                  Juniper Hale, who works under the name Juno, is a
+                  Brooklyn-based sculptor and installation artist. Their
+                  creations center around the human form, natural decay, and
+                  urban renewal, often using reclaimed materials and soft
+                  architectural forms.
+                </p>
+                <p>
+                  Juno's practice brings a thoughtful physical presence to the
+                  collection, offering pieces that feel reflective, tactile, and
+                  deeply connected to place.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="artistCard">
+                <img src="images/kazuo-watanabe.png" alt="Portrait of artist Kazuo Watanabe" />
+                <h2>Kazuo Watanabe</h2>
+                <p>
+                  Kazuo Watanabe is a master of contemporary ink painting and
+                  calligraphy from Kyoto. His minimalist approach bridges Zen
+                  philosophy with modern design aesthetics through disciplined
+                  brushwork, balance, and restraint.
+                </p>
+                <p>
+                  His featured pieces create calm focal points for refined
+                  interiors, pairing traditional technique with a precise modern
+                  sensibility that suits collectors and design-led spaces.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="artistScrollProgress" aria-hidden="true">
+            <span id="artistScrollProgressBar"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="servicesSection" aria-labelledby="servicesTitle">
+        <div class="sectionHeader">
+          <p class="eyebrow">Gallery services</p>
+          <h2 id="servicesTitle">Support for collectors, artists, and spaces.</h2>
+        </div>
+        <div id="servicesContainer">
+          <div id="serviceImg">
+            <img src="images/homeServices.jpg" alt="Gallery consultation space" />
+          </div>
+          <div id="accordionContainer">
+            <div id="accordion">
+              <h3>Art Leasing for Businesses</h3>
+              <div>
+                <div class="servicePanelContent">
+                  <img src="images/modernArt.jpg" alt="Modern artwork selected for a business space" />
+                  <div>
+                    <p>
+                      Bring creativity into your workspace with our rotating art
+                      leasing program. Choose contemporary pieces for your
+                      office, hotel, or cafe while supporting emerging artists.
+                    </p>
+                    <ul class="serviceHighlights">
+                      <li>Quarterly artwork rotation</li>
+                      <li>Installation and placement support</li>
+                      <li>Options for offices, lounges, and hospitality spaces</li>
+                    </ul>
+                    <div class="serviceMeta">
+                      <span>Best for businesses</span>
+                      <strong>Starting at $149/month</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Artist Residency &amp; Studio Space</h3>
+              <div>
+                <div class="servicePanelContent">
+                  <img src="images/paintingArt.jpg" alt="Expressive studio artwork for artist residency" />
+                  <div>
+                    <p>
+                      Selected artists work in our equipped studio spaces as
+                      part of our residency program, with mentorship,
+                      networking, and a closing exhibition.
+                    </p>
+                    <ul class="serviceHighlights">
+                      <li>Dedicated studio access</li>
+                      <li>Curator feedback and portfolio review</li>
+                      <li>Final group showcase with visitor reception</li>
+                    </ul>
+                    <div class="serviceMeta">
+                      <span>Residency format</span>
+                      <strong>6 to 8 week sessions</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Workshops &amp; Art Education</h3>
+              <div>
+                <div class="servicePanelContent">
+                  <img src="images/ColorfulPaintingOfFlowers.jpg" alt="Colorful painting used in art education workshops" />
+                  <div>
+                    <p>
+                      Our gallery hosts workshops, lectures, and hands-on
+                      classes for all ages and skill levels in a welcoming
+                      creative space.
+                    </p>
+                    <ul class="serviceHighlights">
+                      <li>Beginner-friendly art sessions</li>
+                      <li>Artist talks and guided gallery walkthroughs</li>
+                      <li>Custom workshops for schools and community groups</li>
+                    </ul>
+                    <div class="serviceMeta">
+                      <span>Class style</span>
+                      <strong>Small groups, guided practice</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Private Exhibition Curation</h3>
+              <div>
+                <div class="servicePanelContent">
+                  <img src="images/abstractArt.jpg" alt="Atmospheric artwork selected for private exhibition curation" />
+                  <div>
+                    <p>
+                      Our curators build tailored artwork selections for
+                      corporate events, collector showcases, and private
+                      gatherings.
+                    </p>
+                    <ul class="serviceHighlights">
+                      <li>Theme development and artwork shortlist</li>
+                      <li>Room-by-room placement planning</li>
+                      <li>Event-ready labels, lighting notes, and display flow</li>
+                    </ul>
+                    <div class="serviceMeta">
+                      <span>Curation package</span>
+                      <strong>Consultation plus installation plan</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="siteFooter" aria-label="Site footer">
+        <div class="siteFooterInner">
+          <div class="footerBrand">
+            <h2><a href="index.html">SVN Art Gallery</a></h2>
+            <p>
+              Curated contemporary artwork, exhibition programming, and gallery
+              services for homes, offices, collectors, and creative communities.
+            </p>
+          </div>
+          <nav class="footerNav" aria-label="Footer navigation">
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="pages/exhibition.html">Exhibition</a>
+            <a href="pages/products.html">Products</a>
+            <a href="pages/aboutUs.html">About Us</a>
+            <a href="pages/contactUs.html">Contact Us</a>
+            <a href="pages/cart.html">Cart</a>
+          </nav>
+          <div class="footerContact">
+            <h3>Gallery</h3>
+            <div class="footerMap">
+              <iframe
+                title="Map to SVN Art Gallery"
+                src="https://www.google.com/maps?q=Conestoga%20College%20Kitchener%20Ontario&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <p>Original art, workshops, private curation, and art leasing.</p>
+          </div>
+        </div>
+        <div class="footerMeta">
+          <p>
+            &copy; <span id="displayCurrentYear"></span> SVN Art Gallery. All
+            rights reserved.
+          </p>
+          <p><strong>Page Created by Victor Ferreira Araujo</strong></p>
+          <p>
+            This is a group project created by
+            <strong>
+              Victor Ferreira Araujo, Sukhpreet Singh Bhambra, and Nirali Patel
+            </strong>
+            in Semester 1 of the Web Development program at Conestoga College.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="js/plugins/jquery.ui.widget.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

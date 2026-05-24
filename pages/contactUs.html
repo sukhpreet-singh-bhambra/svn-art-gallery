@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVN Art Gallery - Contact Us</title>
+    <link rel="stylesheet" href="../css/contactUs.css" type="text/css" />
+    <link rel="stylesheet" href="../css/site-header.css" />
+  </head>
+  <body>
+    <header>
+      <h2><a href="../index.html">SVN Art Gallery</a></h2>
+      <nav aria-label="Main navigation">
+        <ul class="navLinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="exhibition.html">Exhibition</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a class="active" href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="contactHero">
+      <div class="contactHeroContent">
+        <p class="eyebrow">Visit, inquire, collaborate</p>
+        <h1>Contact SVN Art Gallery</h1>
+        <p>
+          Connect with our team about exhibitions, acquisitions, private
+          curation, workshops, and gallery visits.
+        </p>
+      </div>
+    </section>
+
+    <main class="contactPage">
+      <aside class="contactFeature" aria-label="Gallery contact information">
+        <img src="../images/homeServices.jpg" alt="Gallery consultation space" />
+        <div class="contactFeatureContent">
+          <h2>Plan Your Visit</h2>
+          <p>
+            Our curatorial team can help with artwork selection, exhibition
+            inquiries, and collection planning for personal or professional
+            spaces.
+          </p>
+          <div class="contactDetails">
+            <div>
+              <span>Location</span>
+              <strong>Ontario, Canada</strong>
+            </div>
+            <div>
+              <span>Email</span>
+              <strong>hello@svnartgallery.ca</strong>
+            </div>
+            <div>
+              <span>Response Time</span>
+              <strong>Within 1 business day</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section id="contactUsContainer">
+        <div class="contactIntro">
+          <p class="eyebrow">Send a message</p>
+          <h2>How can we help?</h2>
+          <p>
+            Fill out the form and we will direct your message to the right
+            gallery team member.
+          </p>
+        </div>
+
+        <form id="contactUsForm">
+          <div class="formRow formHalf">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name" maxlength="50" required />
+            <span id="firstNameError" class="errorMessage">*</span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name" maxlength="50" required />
+            <span id="lastNameError" class="errorMessage">*</span>
+          </div>
+
+          <fieldset class="formRow formFull">
+            <legend>Gender</legend>
+            <div class="radioInputs">
+              <div class="radioUnit">
+                <input type="radio" id="genderMale" name="gender" value="Male" />
+                <label for="genderMale">Male</label>
+              </div>
+              <div class="radioUnit">
+                <input type="radio" id="genderFemale" name="gender" value="Female" />
+                <label for="genderFemale">Female</label>
+              </div>
+              <div class="radioUnit">
+                <input type="radio" id="genderOther" name="gender" value="Other" />
+                <label for="genderOther">Other</label>
+              </div>
+            </div>
+            <span id="genderError" class="errorMessage">*</span>
+          </fieldset>
+
+          <div class="formRow formHalf">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" maxlength="80" required />
+            <span id="emailError" class="errorMessage">*</span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit phone number" maxlength="20" required />
+            <span id="phoneError" class="errorMessage">*</span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Optional" maxlength="80" />
+            <span id="companyError" class="errorMessage"></span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="address1">Address 1</label>
+            <input type="text" id="address1" name="address1" placeholder="Street address" maxlength="120" required />
+            <span id="address1Error" class="errorMessage">*</span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="address2">Address 2</label>
+            <input type="text" id="address2" name="address2" placeholder="Apartment, suite, unit" maxlength="120" />
+            <span id="address2Error" class="errorMessage"></span>
+          </div>
+
+          <div class="formRow formHalf">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="">Select a Country</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="UK">UK</option>
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+            </select>
+            <span id="countryError" class="errorMessage">*</span>
+          </div>
+
+          <div class="formRow formFull">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what you are looking for" maxlength="500" required></textarea>
+            <span id="messageError" class="errorMessage">*</span>
+          </div>
+
+          <div class="buttonRow">
+            <button type="button" id="submitForm">Submit</button>
+            <button type="reset" id="resetForm">Reset</button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="successMessage">
+          <p>Form submitted successfully!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="siteFooter" aria-label="Site footer">
+      <div class="siteFooterInner">
+        <div class="footerBrand">
+          <h2><a href="../index.html">SVN Art Gallery</a></h2>
+          <p>
+            Curated contemporary artwork, exhibition programming, and gallery
+            services for homes, offices, collectors, and creative communities.
+          </p>
+        </div>
+        <nav class="footerNav" aria-label="Footer navigation">
+          <h3>Explore</h3>
+          <a href="../index.html">Home</a>
+          <a href="exhibition.html">Exhibition</a>
+          <a href="products.html">Products</a>
+          <a href="aboutUs.html">About Us</a>
+          <a href="contactUs.html">Contact Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+        <div class="footerContact">
+          <h3>Gallery</h3>
+          <div class="footerMap">
+            <iframe
+              title="Map to SVN Art Gallery"
+              src="https://www.google.com/maps?q=Conestoga%20College%20Kitchener%20Ontario&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <p>Original art, workshops, private curation, and art leasing.</p>
+        </div>
+      </div>
+      <div class="footerMeta">
+        <p>
+          &copy; <span id="displayCurrentYear"></span> SVN Art Gallery. All rights
+          reserved.
+        </p>
+        <p><strong>Page Created by Victor Ferreira Araujo</strong></p>
+        <p>
+          This is a group project created by
+          <strong>
+            Victor Ferreira Araujo, Sukhpreet Singh Bhambra, and Nirali Patel
+          </strong>
+          in Semester 1 of the Web Development program at Conestoga College.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/site.js"></script>
+    <script src="../js/contactUs.js"></script>
+  </body>
+</html>
