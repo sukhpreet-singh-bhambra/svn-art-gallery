@@ -3,6 +3,7 @@
 .agents
 .codex
 Dockerfile
+docker-compose.yml
 .dockerignore
 README.md
 original_sized_image/

@@ -43,6 +43,9 @@ This is a group project created by **Victor Ferreira Araujo, Sukhpreet Singh Bha
 ```text
 .
 +-- index.html
++-- Dockerfile
++-- docker-compose.yml
++-- .dockerignore
 +-- pages/
 |   +-- aboutUs.html
 |   +-- cart.html
@@ -96,6 +99,114 @@ Then open:
 ```text
 http://localhost:8000
 ```
+
+## Docker Setup
+
+The project can also run inside a Docker container using Nginx. This is useful when we want everyone to run the website in the same server environment instead of opening the HTML files directly.
+
+### Dockerfile
+
+The `Dockerfile` uses the lightweight `nginx:alpine` image:
+
+```dockerfile
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
+```
+
+Nginx serves static websites from `/usr/share/nginx/html`, so the project files are copied into that folder. We do not need a `WORKDIR` for this project because there is no build command, package install, or app startup command that depends on a working directory.
+
+### Docker Compose
+
+The `docker-compose.yml` file builds and runs the website with these settings:
+
+- **Image name**: `sukhbhambra/svn-art-gallery:prod-v1.0.1`
+- **Container name**: `svn-art-gallery-web-prod-v1.0.1-container`
+- **Host port**: `8081`
+- **Container port**: `80`
+- **Web root inside container**: `/usr/share/nginx/html`
+
+The Compose file also uses read-only bind mounts:
+
+```yaml
+volumes:
+  - ./index.html:/usr/share/nginx/html/index.html:ro
+  - ./css:/usr/share/nginx/html/css:ro
+  - ./images:/usr/share/nginx/html/images:ro
+  - ./js:/usr/share/nginx/html/js:ro
+  - ./pages:/usr/share/nginx/html/pages:ro
+```
+
+These mounts map the local website files into the running container. When we edit HTML, CSS, JavaScript, or image files locally, the container serves those updated files without needing to rebuild the image.
+
+Because the Compose file includes both `build` and `image`, Docker builds the image from the local `Dockerfile` and tags it as `sukhbhambra/svn-art-gallery:prod-v1.0.1`.
+
+### Run With Docker
+
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:8081
+```
+
+To run the container in the background:
+
+```bash
+docker compose up --build -d
+```
+
+To stop and remove the container and network:
+
+```bash
+docker compose down
+```
+
+To check the running container:
+
+```bash
+docker ps
+```
+
+To view container logs:
+
+```bash
+docker logs svn-art-gallery-web-prod-v1.0.1-container
+```
+
+### Docker Hub Note
+
+The image name uses a Docker Hub repository format:
+
+```text
+sukhbhambra/svn-art-gallery:prod-v1.0.1
+```
+
+If the image is pushed to Docker Hub, other users can pull and run that image. The current Compose setup is best for local development because it uses bind mounts. Those mounted local files override the files copied into the image while the container is running.
+
+To test only the pushed Docker Hub image, run without local bind mounts, for example:
+
+```bash
+docker run --name svn-art-gallery-web-prod-v1.0.1-container -p 8081:80 sukhbhambra/svn-art-gallery:prod-v1.0.1
+```
+
+### Port Notes
+
+The site is mapped to `8081:80` because port `8080` was already being used on the host machine. If `8081` is also unavailable, change only the left side of the port mapping in `docker-compose.yml`:
+
+```yaml
+ports:
+  - "8082:80"
+```
+
+Then open `http://localhost:8082`.
+
+### Docker Ignore
+
+The `.dockerignore` file keeps development-only files out of the Docker image, such as `.git`, `README.md`, `Dockerfile`, `docker-compose.yml`, and the original source image folder. This keeps the image cleaner and prevents non-website files from being served by Nginx.
 
 ## Testing Summary
 
