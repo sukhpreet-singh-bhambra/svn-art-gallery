@@ -85,6 +85,7 @@ This is a group project created by **Victor Ferreira Araujo, Sukhpreet Singh Bha
 - **Contact Us**: Victor Ferreira Araujo
 - **Products**: Sukhpreet Singh Bhambra
 - **Cart**: Sukhpreet Singh Bhambra
+- **Dockerization**: Sukhpreet Singh Bhambra
 - **About Us**: Nirali Patel
 - **Exhibition**: Nirali Patel
 
