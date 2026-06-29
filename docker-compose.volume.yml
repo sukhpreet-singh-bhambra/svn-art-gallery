@@ -1,0 +1,69 @@
+# Defines all containers/services that Docker Compose can run from this file.
+services:
+  # Website service used for volume practice.
+  web:
+    # Uses the already published Docker Hub image for the SVN Art Gallery site.
+    image: sukhbhambra/svn-art-gallery:prod-v1.0.1
+
+    # Gives this practice container a predictable name in Docker Desktop and docker ps.
+    container_name: svn-art-gallery-volume-practice
+
+    # Starts the port mapping list for this container.
+    ports:
+      # Maps localhost:8082 on the computer to port 80 inside the Nginx container.
+      - "8082:80"
+
+    # Starts the volume mapping list for this container.
+    volumes:
+      # Mounts the named Docker volume into Nginx's public website folder.
+      # If the named volume is empty, Docker copies the image's existing website files into it.
+      # After that, the volume persists independently from the container.
+      - svn-art-gallery-volume:/usr/share/nginx/html
+
+  # Short-lived service used only to back up the named volume.
+  backup:
+    # Uses Alpine Linux because it is small and includes the tar command we need.
+    image: alpine
+
+    # Keeps this service from running during a normal docker compose up.
+    # It runs only when the backup profile is requested.
+    profiles: ["backup"]
+
+    # Starts the volume mappings needed by the backup container.
+    volumes:
+      # Mounts the website volume at /data as read-only, so backup cannot modify it.
+      - svn-art-gallery-volume:/data:ro
+
+      # Mounts the local volume-backups folder at /backup to store the backup file.
+      - ./volume-backups:/backup
+
+    # Creates a compressed tar.gz backup of everything inside /data.
+    # -c creates an archive, -z compresses it with gzip, and -f writes to the given file.
+    # -C /data tells tar to change into /data first, and . means include everything there.
+    command: tar -czf /backup/svn-art-gallery-volume-backup.tar.gz -C /data .
+
+  # Short-lived service used only to restore the named volume from the backup file.
+  restore:
+    # Uses Alpine Linux because it is small and includes the tar command we need.
+    image: alpine
+
+    # Keeps this service from running during a normal docker compose up.
+    # It runs only when the restore profile is requested.
+    profiles: ["restore"]
+
+    # Starts the volume mappings needed by the restore container.
+    volumes:
+      # Mounts the website volume at /data with write access so files can be restored.
+      - svn-art-gallery-volume:/data
+
+      # Mounts the local volume-backups folder as read-only because restore only reads from it.
+      - ./volume-backups:/backup:ro
+
+    # Extracts the compressed backup into /data.
+    # -x extracts, -z decompresses gzip, -f reads the given file, and -C /data restores there.
+    command: tar -xzf /backup/svn-art-gallery-volume-backup.tar.gz -C /data
+
+# Defines named Docker volumes managed by Compose.
+volumes:
+  # Persistent named volume used to practice create, backup, remove, and restore.
+  svn-art-gallery-volume:

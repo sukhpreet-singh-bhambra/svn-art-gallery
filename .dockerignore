@@ -4,6 +4,7 @@
 .codex
 Dockerfile
 docker-compose.yml
+docker-compose.volume.yml
 .dockerignore
 README.md
 original_sized_image/

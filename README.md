@@ -45,6 +45,7 @@ This is a group project created by **Victor Ferreira Araujo, Sukhpreet Singh Bha
 +-- index.html
 +-- Dockerfile
 +-- docker-compose.yml
++-- docker-compose.volume.yml
 +-- .dockerignore
 +-- pages/
 |   +-- aboutUs.html
@@ -193,6 +194,72 @@ To test only the pushed Docker Hub image, run without local bind mounts, for exa
 docker run --name svn-art-gallery-web-prod-v1.0.1-container -p 8081:80 sukhbhambra/svn-art-gallery:prod-v1.0.1
 ```
 
+### Docker Volume Practice
+
+The `docker-compose.volume.yml` file is included for practicing Docker named volumes. It is separate from the main `docker-compose.yml` file so the normal project setup stays simple.
+
+This practice file includes three services:
+
+- `web`: runs the SVN Art Gallery site and mounts a named volume into Nginx's web root.
+- `backup`: creates a compressed backup of the named volume.
+- `restore`: restores the named volume from the backup file.
+
+The named volume is:
+
+```text
+svn-art-gallery-volume
+```
+
+Start the volume-practice website:
+
+```bash
+docker compose -f docker-compose.volume.yml up -d web
+```
+
+Then open:
+
+```text
+http://localhost:8082
+```
+
+Create a backup of the named volume:
+
+```bash
+docker compose -f docker-compose.volume.yml --profile backup run --rm backup
+```
+
+This creates a backup file in:
+
+```text
+volume-backups/svn-art-gallery-volume-backup.tar.gz
+```
+
+Stop the practice container and remove the Compose-managed volume:
+
+```bash
+docker compose -f docker-compose.volume.yml down -v
+```
+
+Recreate the empty volume by starting the practice website again:
+
+```bash
+docker compose -f docker-compose.volume.yml up -d web
+```
+
+Restore the volume from the backup file:
+
+```bash
+docker compose -f docker-compose.volume.yml --profile restore run --rm restore
+```
+
+Restart the website container after restoring:
+
+```bash
+docker compose -f docker-compose.volume.yml restart web
+```
+
+The `volume-backups/` folder is generated locally and is ignored by Git because backup archives should not usually be committed to the repository.
+
 ### Port Notes
 
 The site is mapped to `8081:80` because port `8080` was already being used on the host machine. If `8081` is also unavailable, change only the left side of the port mapping in `docker-compose.yml`:
@@ -204,9 +271,18 @@ ports:
 
 Then open `http://localhost:8082`.
 
+For the volume-practice file, port `8082` is already used by `docker-compose.volume.yml`. If that port is unavailable, change the left side of this mapping in `docker-compose.volume.yml`:
+
+```yaml
+ports:
+  - "8083:80"
+```
+
+Then open `http://localhost:8083`.
+
 ### Docker Ignore
 
-The `.dockerignore` file keeps development-only files out of the Docker image, such as `.git`, `README.md`, `Dockerfile`, `docker-compose.yml`, and the original source image folder. This keeps the image cleaner and prevents non-website files from being served by Nginx.
+The `.dockerignore` file keeps development-only files out of the Docker image, such as `.git`, `README.md`, `Dockerfile`, `docker-compose.yml`, `docker-compose.volume.yml`, and the original source image folder. This keeps the image cleaner and prevents non-website files from being served by Nginx.
 
 ## Testing Summary
 
