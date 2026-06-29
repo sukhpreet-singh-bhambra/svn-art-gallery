@@ -1,0 +1,10 @@
+.git
+.gitignore
+.agents
+.codex
+Dockerfile
+.dockerignore
+README.md
+original_sized_image/
+.DS_Store
+Thumbs.db
