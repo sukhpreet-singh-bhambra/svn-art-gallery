@@ -37,6 +37,13 @@ This is a group project created by **Victor Ferreira Araujo, Sukhpreet Singh Bha
 - SweetAlert2
 - Lightbox
 - Google Maps embed
+- Docker
+- Docker Compose
+- Docker named volumes
+- Nginx
+- Docker Hub
+- Git and GitHub
+- Vercel
 
 ## Project Structure
 
